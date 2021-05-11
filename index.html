@@ -11,7 +11,7 @@
     <script>
         window.addEventListener('load', async () => {
 
-            const modelPath = `${window.location.href}model/model.json`;
+            const modelPath = `${window.location.href}assets/model.json`;
             const model = await tf.loadLayersModel(modelPath);
 
             const logElm = document.getElementById('log');
@@ -96,7 +96,7 @@
             };
 
             const changeActionText = (pred_index) => {
-                const actionText = ['左右-小さい', '上下-大きい', '上下-小さい', '左右-大きい', 'u', 'y'];
+                const actionText = ['左右-小さい', '上下-大きい', '上下-小さい', '左右-大きい'];
                 // const actionText = ['0', '1', '2', '3', '4']
                 const actionTextElm = document.getElementById('action');
                 actionTextElm.textContent = actionText[pred_index];
