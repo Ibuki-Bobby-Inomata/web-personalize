@@ -8,7 +8,7 @@ heroku:
 heroku-re:
 	git add .
 	git commit -m 'heroku'
-	git push heroku master
+	git push heroku main
 
 
 heroku-dell:
