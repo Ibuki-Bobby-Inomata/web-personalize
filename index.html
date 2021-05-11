@@ -11,7 +11,7 @@
     <script>
         window.addEventListener('load', async () => {
 
-            const modelPath = `${window.location.href}model/model.json`;
+            const modelPath = `${window.location.href}assets/model.json`;
             const model = await tf.loadLayersModel(modelPath);
 
             const logElm = document.getElementById('log');
