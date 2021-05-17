@@ -90,9 +90,9 @@
                 changeActionText(argMax(pred_data));
 
                 // 推定データのログ表示
-                logElm.innerText += `0: ${pred_data[0]}   |   1: ${pred_data[1]}   |    2: ${pred_data[2]}   |   3: ${pred_data[3]}|   4: ${pred_data[4]}|   5: ${pred_data[5]}|   6: ${pred_data[6]}\n`;
-                logElm.innerText += `--------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n`;
-                logElm.scrollTop = logElm.scrollHeight;
+                // logElm.innerText += `0: ${pred_data[0]}   |   1: ${pred_data[1]}   |    2: ${pred_data[2]}   |   3: ${pred_data[3]}|   4: ${pred_data[4]}|   5: ${pred_data[5]}|   6: ${pred_data[6]}\n`;
+                // logElm.innerText += `--------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n`;
+                // logElm.scrollTop = logElm.scrollHeight;
             };
 
             const changeActionText = (pred_index) => {
@@ -100,6 +100,9 @@
                 // const actionText = ['0', '1', '2', '3', '4']
                 const actionTextElm = document.getElementById('action');
                 actionTextElm.textContent = actionText[pred_index];
+                logElm.innerText += actionText[pred_index]
+                logElm.innerText += `--------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n`;
+                logElm.scrollTop = logElm.scrollHeight;
             };
 
 
