@@ -117,7 +117,8 @@
                 logElm.innerText += `******************\n`;
                 logElm.scrollTop = logElm.scrollHeight;
 
-                document.bgColor = actionColor[pred_index];
+                let obj = document.getElementById('body_0')
+                obj.style.backgroundColor = actionColor[pred_index];
 
                 // let input = document.getElementById('body');
                 // input.style.backgroundColor = actionColor[pred_index];
@@ -219,7 +220,7 @@
     </script>
 </head>
 
-<body>
+<body id="body_0">
     <div class="wrapper">
         <div class="action-view">
             <span id="action">推定中…</span>
