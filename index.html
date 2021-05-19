@@ -95,8 +95,20 @@
                 // logElm.scrollTop = logElm.scrollHeight;
             };
 
+            // const changeActionText = (pred_index) => {
+            //     const actionText = ['左右_小', '左右_大','上下_小','上下_大','前後_小','前後_大','静止'];
+            //     // const actionText = ['0', '1', '2', '3', '4']
+            //     const actionTextElm = document.getElementById('action');
+            //     actionTextElm.textContent = actionText[pred_index];
+            //     logElm.innerText += actionText[pred_index]
+            //     logElm.innerText += `\n`;
+            //     logElm.innerText += `******************\n`;
+            //     logElm.scrollTop = logElm.scrollHeight;
+            // };
+
             const changeActionText = (pred_index) => {
                 const actionText = ['左右_小', '左右_大','上下_小','上下_大','前後_小','前後_大','静止'];
+                const actionColor = ['red','blue','yellow','green','orange','magenta','cyan'];
                 // const actionText = ['0', '1', '2', '3', '4']
                 const actionTextElm = document.getElementById('action');
                 actionTextElm.textContent = actionText[pred_index];
@@ -104,8 +116,9 @@
                 logElm.innerText += `\n`;
                 logElm.innerText += `******************\n`;
                 logElm.scrollTop = logElm.scrollHeight;
+                let input = document.getElementById('body');
+                input.style.backgroundColor = actionColor[pred_index];
             };
-
 
             window.addEventListener('deviceorientation', (event) => {
                 event.preventDefault();
