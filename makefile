@@ -2,7 +2,7 @@ heroku:
 	git add .
 	git commit -m 'heroku'
 	heroku create
-	git push heroku master
+	git push heroku main
 	heroku open
 
 heroku-re:
