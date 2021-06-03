@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1011ccab-cf6e-4856-beee-7ba479960088" name="cokeTestServer" url="http://localhost/coke">
+        <fileTransfer mountedRoot="/Applications/XAMPP/xamppfiles/htdocs/coke" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
