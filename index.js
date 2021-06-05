@@ -124,9 +124,9 @@ start.addEventListener('click', async () => {
         sendRSM += ','+makeRSM(JSON.parse(JSON.stringify(sensorData)));
         sendDate += ','+Date.now();
 
-        console.log(sendDate);
-        console.log(sendProcessedData);
-        console.log(sendRSM);
+        // console.log(sendDate);
+        // console.log(sendProcessedData);
+        // console.log(sendRSM);
 
         let obj = document.getElementById('body_0')
         // obj.style.backgroundColor = actionColor[pred_index];
@@ -135,7 +135,7 @@ start.addEventListener('click', async () => {
         // input.style.backgroundColor = actionColor[pred_index];
     };
 
-    start.addEventListener('deviceorientation', (event) => {
+    window.addEventListener('deviceorientation', (event) => {
         event.preventDefault();
         sensorData.do_absolute = (event.absolute !== null) ? event.absolute : false;
         sensorData.do_alpha = event.alpha;
@@ -143,7 +143,7 @@ start.addEventListener('click', async () => {
         sensorData.do_gamma = event.gamma;
     }, true);
 
-    start.addEventListener('devicemotion', (event) => {
+    window.addEventListener('devicemotion', (event) => {
         event.preventDefault();
         sensorData.acc_g_x = event.accelerationIncludingGravity.x;
         sensorData.acc_g_y = event.accelerationIncludingGravity.y;
@@ -154,6 +154,8 @@ start.addEventListener('click', async () => {
         sensorData.rot_alpha = event.rotationRate.alpha;
         sensorData.rot_beta = event.rotationRate.beta;
         sensorData.rot_gamma = event.rotationRate.gamma;
+
+        console.log(sensorData.acc_x)
     }, true);
 
 
