@@ -60,30 +60,6 @@ start.addEventListener('click', async () => {
 
     const sleep = (mSec) => new Promise(resolve => setTimeout(resolve, mSec));
 
-    (async () => {
-        const sleepMSec = 200;
-        // let isCollectSensor = true;
-        // console.log('err_0')
-
-        while (flagStart) {
-            // センサデータの加工を行ってデータ構造を作成する
-            // console.log('err_1')
-            prepro(JSON.parse(JSON.stringify(sensorData)));
-
-            // console.log(processedData)
-            // console.log(outlierDataArray)
-
-
-            // データが 10 個揃ったら推論を始める
-            // キューを用意し、一つずつずらしながら推論のデータ構造を作成する
-            if (processedData !== null) {
-                motionEstimation();
-            }
-
-            await sleep(sleepMSec);
-        }
-    })();
-
     const motionEstimation = async () => {
         const pred = await model.predict(processedData);
         const pred_data = pred.dataSync();
@@ -158,8 +134,29 @@ start.addEventListener('click', async () => {
         console.log(sensorData.acc_x)
     }, true);
 
+    (async () => {
+        const sleepMSec = 200;
+        // let isCollectSensor = true;
+        // console.log('err_0')
+
+        while (flagStart) {
+            // センサデータの加工を行ってデータ構造を作成する
+            // console.log('err_1')
+            prepro(JSON.parse(JSON.stringify(sensorData)));
+
+            // console.log(processedData)
+            // console.log(outlierDataArray)
 
 
+            // データが 10 個揃ったら推論を始める
+            // キューを用意し、一つずつずらしながら推論のデータ構造を作成する
+            if (processedData !== null) {
+                motionEstimation();
+            }
+
+            await sleep(sleepMSec);
+        }
+    })();
 
     function prepro(data) {
         const acc = Math.sqrt(Math.pow(data.acc_x, 2) + Math.pow(data.acc_y, 2) + Math.pow(data.acc_z, 2));

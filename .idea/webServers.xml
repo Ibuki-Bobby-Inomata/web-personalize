@@ -5,6 +5,9 @@
       <webServer id="1011ccab-cf6e-4856-beee-7ba479960088" name="cokeTestServer" url="http://localhost/coke">
         <fileTransfer mountedRoot="/Applications/XAMPP/xamppfiles/htdocs/coke" accessType="MOUNT" port="0" />
       </webServer>
+      <webServer id="35a17786-7fd0-4078-b26b-702d7f29c8f4" name="cokeServerMa" url="http://localhost/coke">
+        <fileTransfer mountedRoot="/Applications/MAMP/htdocs/coke" accessType="MOUNT" port="0" />
+      </webServer>
     </option>
   </component>
 </project>

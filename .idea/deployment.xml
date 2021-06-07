@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" serverName="cokeTestServer" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
+      <paths name="cokeServerMa">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="cokeTestServer">
         <serverdata>
           <mappings>
